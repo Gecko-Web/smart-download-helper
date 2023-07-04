@@ -24,8 +24,8 @@
    > ATTENTION :  
    > Une fois l'extension installée, si son répertoire est supprimé, l'extension ne fonctionnera plus.
    > 
-   > Assurez-vous d'extraire les fichiers dans un dossier que vous ne supprimerez pas involontairement.
-   > Par exemple : *C:\Program Files\smart-download-helper*
+   > Assurez-vous d'extraire les fichiers dans un dossier que vous ne supprimez pas accidentellement.  
+   > Par exemple : `C:\Program Files\smart-download-helper`
    > 
 
    <img src="tuto/chrome-step2.png" alt="">
@@ -53,7 +53,7 @@
 
 
 8. Sélectionnez le répertoire extrait à l'étape n°2 
-   > Par exemple : *C:\Program Files\smart-download-helper*  
+   > Par exemple : `C:\Program Files\smart-download-helper`  
    
    <img src="tuto/chrome-step8.png" alt="">
   
