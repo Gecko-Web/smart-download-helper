@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Smart download helper",
+  "description": "Help downloading files on SmartFr dashboard",
+  "version": "1.0",
+  "author": "contact@gecko-web.fr",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_icon": "/images/icon-128.png",
+    "default_title": "Smart download helper"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://compte.smartfr.fr/*"
+      ],
+      "js": [
+        "/src/inject.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/downloadHelpers/contract-files.js"
+      ],
+      "matches": [
+        "https://compte.smartfr.fr/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
