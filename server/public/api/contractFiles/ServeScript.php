@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-use GoogleClosureCompiler\Compiler;
-use Tholu\Packer\Packer;
-
 header('Access-Control-Allow-Origin: *');
 /**
  * Author: Gecko Web
