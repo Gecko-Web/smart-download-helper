@@ -26,6 +26,8 @@
     "ext-json": "*",
     "jbzoo/utils": "^2.3",
     "league/commonmark": "^1.6",
-    "rakibtg/sleekdb": "^2.15"
+    "rakibtg/sleekdb": "^2.15",
+    "tholu/php-packer": "^0.2.0",
+    "vlucas/phpdotenv": "^5.5"
   }
 }

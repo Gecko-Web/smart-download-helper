@@ -20,7 +20,7 @@ $converter = new MarkdownConverter($environment);
 $readmeFile = file_get_contents(ROOT_ABSOLUTE_PATH . '/README.md');
 
 //symlink for readme images
-@symlink(realpath(ROOT_ABSOLUTE_PATH.'/assets/images'),realpath(DOCUMENT_ROOT.'/assets/images'))
+@symlink(realpath(ROOT_ABSOLUTE_PATH.'/assets/images'),realpath(DOCUMENT_ROOT.'/assets/images'));
 ?>
 
 

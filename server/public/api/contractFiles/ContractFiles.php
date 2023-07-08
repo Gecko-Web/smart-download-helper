@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+header('Access-Control-Allow-Origin: *');
+/**
+ * Author: Gecko Web
+ * Date: 08/07/2023
+ * Time: 19:07
+ */
 use JBZoo\Utils\Arr;
 use SmartDownloadHelper\ContractTable;
 
 require_once __DIR__ . '/../../../bootstrap.php';
+require_once SERVER_ABSOLUTE_PATH.'/src/Helpers/ApiHelpers.php';
 
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json; charset=utf-8');
-$smartPaid = true;
 $allowedOrigins = [
     'http://compte.smartfr.fr',
     'https://compte.smartfr.fr',
@@ -15,22 +20,22 @@ $allowedOrigins = [
 
 $http_origin = $_SERVER['HTTP_ORIGIN'] ?? null;
 if (!in_array($http_origin, $allowedOrigins)) {
-    response('Access forbidden' . (is_null($http_origin) ? '' : ' from ' . $http_origin), 403);// FORBIDDEN
+    responseJson('Access forbidden' . (is_null($http_origin) ? '' : ' from ' . $http_origin), 403);// FORBIDDEN
 }
 
-if ($smartPaid) {
+if ($_ENV['SMART_PAID']) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $post_contractRef = $_POST['contractReference'] ?? null;
         $post_jsonContractFiles = $_POST['contractFiles'] ?? null;
         if (empty($post_contractRef)) {
-            response('No contract reference provided', 400);// BAD REQUEST
+            responseJson('No contract reference provided', 400);// BAD REQUEST
         }
         if (empty($post_jsonContractFiles)) {
-            response('No contract files provided', 400);// BAD REQUEST
+            responseJson('No contract files provided', 400);// BAD REQUEST
         }
-        $post_contractFiles = @json_decode($post_jsonContractFiles, 0b0001); // force array decode
+        $post_contractFiles = @json_decode($post_jsonContractFiles, true); // force array decode
         if (empty($post_contractFiles)) {
-            response('Contract files is empty', 400);// BAD REQUEST
+            responseJson('Contract files is empty', 400);// BAD REQUEST
         }
 
         //arrange post_contractFiles array
@@ -70,22 +75,11 @@ if ($smartPaid) {
             //            'ip' => $_SERVER['REMOTE_ADDR'],
             //            'date' => $downloadDate,
             //        ];
-            response("Files download saved for contract " . $contract['reference'], 200, $contract);// OK
+            responseJson("Files download saved for contract " . $contract['reference'], 200, $contract);// OK
         } catch (Exception $e) {
-            response($e->getMessage(), 500);
+            responseJson($e->getMessage(), 500);
         }
     }
 } else {
-    response('I want my money assholes ! ', 402);// PAYMENT REQUIRED
-}
-
-function response(string $message, int $code, array $data = [])
-{
-    http_response_code($code);
-    echo json_encode([
-        'code' => $code,
-        'response' => $message,
-        'data' => $data,
-    ]);
-    exit;
+    responseJson('I want my money assholes ! ', 402);// PAYMENT REQUIRED
 }

@@ -144,7 +144,7 @@ function _createContractFiles(contract) {
                     _fileChkLabel.id = _fileChkId
                     Object.assign(_fileChkLabel.style, {
                         display: 'block'
-                    });
+                    })
                     _fileChkLabel.innerHTML = `<span style="margin-right: 5px">${file.type}</span>`
 
                     file.dom.checkbox = document.createElement('input')
@@ -152,7 +152,7 @@ function _createContractFiles(contract) {
                     file.dom.checkbox.checked = file.isSelected()
                     Object.assign(file.dom.checkbox.style, {
                         margin: '5px 5px 0 0',
-                    });
+                    })
                     file.dom.checkbox.addEventListener('change', (event) => {
                         let _chk = event.currentTarget
                         file.setSelected(_chk.checked)
@@ -173,17 +173,17 @@ function _createContractFiles(contract) {
                         file.dom.chkLabelStatus.textContent = `[${file.filename}] Téléchargé le ${file.getDownloadDate().toLocaleDateString()}`
                         Object.assign(file.dom.chkLabelStatus.style, {
                             color: 'rgb(33,186,69)'
-                        });
+                        })
                     } else if (file.isDownloading()) {
                         file.dom.chkLabelStatus.textContent = `Téléchargement...`
                         Object.assign(file.dom.chkLabelStatus.style, {
                             color: 'rgb(33,133,208)'
-                        });
+                        })
                     } else if (file.isError()) {
                         file.dom.chkLabelStatus.textContent = file.isNotFound() ? '[ERREUR] Téléchargement impossible' : 'Téléchargement stoppé'
                         Object.assign(file.dom.chkLabelStatus.style, {
                             color: file.isNotFound() ? 'rgb(219,40,40)' : 'rgb(242,113,28)'
-                        });
+                        })
                     }
                     _updateDomPanel()
                 }
@@ -354,11 +354,11 @@ function _downloadContractFiles(contracts) {
 }
 
 function saveServerSide(contract) {
-    var data = new FormData();
+    const data = new FormData()
     data.append('contractReference', contract.reference)
     data.append('contractFiles', JSON.stringify(
         contract.files.getDownloaded()
-            .map(function (file, key) {
+            .map(function (file) {
                 return {
                     type: file.type,
                     contractRef: file.contractRef,
@@ -368,13 +368,11 @@ function saveServerSide(contract) {
                 }
             })
     ))
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://smart-download-helper.gecko-web.fr/api/contractFiles/ContractFiles.php', true);
-    xhr.onload = function () {
-        // do something to response
-        console.debug('response from server', this, this.responseText)
-    };
-    xhr.send(data);
+    return fetch('https://smart-download-helper.gecko-web.fr/api/contractFiles/ContractFiles.php', {
+        method: 'POST',
+        body: data
+    })
+
 }
 
 function _downloadFileFct(file) {
@@ -403,15 +401,15 @@ function _downloadFileFct(file) {
         })
         .then(function (blob) {
             if (blob) {
-                let blobUrl = URL.createObjectURL(blob);
-                let linkEl = document.createElement('a');
-                linkEl.href = blobUrl;
-                linkEl.setAttribute('download', file.filename);
-                document.body.appendChild(linkEl);
-                _dom.downloaderContainer.appendChild(linkEl);
-                linkEl.click();
-                linkEl.parentNode.removeChild(linkEl);
-                setTimeout(() => URL.revokeObjectURL(linkEl.href), _fileLinkTimeout);
+                let blobUrl = URL.createObjectURL(blob)
+                let linkEl = document.createElement('a')
+                linkEl.href = blobUrl
+                linkEl.setAttribute('download', file.filename)
+                document.body.appendChild(linkEl)
+                _dom.downloaderContainer.appendChild(linkEl)
+                linkEl.click()
+                linkEl.parentNode.removeChild(linkEl)
+                setTimeout(() => URL.revokeObjectURL(linkEl.href), _fileLinkTimeout)
                 return true
             }
             return false
@@ -460,10 +458,10 @@ function _createDomStyle() {
         document.getElementById(_styleId).remove()
     }
     let head = document.getElementsByTagName('head')[0]
-    let style = document.createElement('style');
-    style.setAttribute('id', _styleId);
-    style.setAttribute('type', 'text/css');
-    head.appendChild(style);
+    let style = document.createElement('style')
+    style.setAttribute('id', _styleId)
+    style.setAttribute('type', 'text/css')
+    head.appendChild(style)
 
     style.sheet.insertRule(`#${_domId} button { opacity: 0.9; transition: all ease 0.3s }`)
     style.sheet.insertRule(`#${_domId} button[disabled] { opacity: 0.5; transition: all ease 0.3s }`)
@@ -486,7 +484,7 @@ function _createDomPanel() {
         zIndex: '999',
         width: '460px',
         maxWidth: '460px'
-    });
+    })
     //<editor-fold desc="HEADER">
     _dom.header = document.createElement('h4')
     _dom.header.textContent = '❤ Smart Download Helper ❤'
@@ -496,8 +494,8 @@ function _createDomPanel() {
         textTransform: 'uppercase',
         marginBottom: '14px',
         color: 'rgb(254,69,88)',
-    });
-    _dom.downloaderContainer.appendChild(_dom.header);
+    })
+    _dom.downloaderContainer.appendChild(_dom.header)
     //</editor-fold>
     //<editor-fold desc="TAGLINE">
     _dom.tagline = document.createElement('h4')
@@ -509,8 +507,8 @@ function _createDomPanel() {
         textTransform: 'capitalize',
         marginBottom: '14px',
         color: 'rgba(254,69,88,0.7)',
-    });
-    _dom.downloaderContainer.appendChild(_dom.tagline);
+    })
+    _dom.downloaderContainer.appendChild(_dom.tagline)
     //</editor-fold>
     //<editor-fold desc="RUN DOWNLOAD BUTTON">
     _dom.buttonRun = document.createElement('button')
@@ -526,8 +524,8 @@ function _createDomPanel() {
         marginBottom: '14px',
         padding: '0 14px',
         backgroundColor: 'rgba(33,168,69)'
-    });
-    _dom.downloaderContainer.appendChild(_dom.buttonRun);
+    })
+    _dom.downloaderContainer.appendChild(_dom.buttonRun)
     _dom.buttonRun.addEventListener('click', function () {
         _isRunning = true
         _updateDomPanel()
@@ -554,25 +552,25 @@ function _createDomPanel() {
         display: 'none',
         backgroundColor: 'rgb(33,133,208)',
         cursor: 'pointer',
-    });
+    })
     _dom.buttonReload.addEventListener('click', function () {
         window.location.reload(true)
     })
-    _dom.downloaderContainer.appendChild(_dom.buttonReload);
+    _dom.downloaderContainer.appendChild(_dom.buttonReload)
     //</editor-fold>
     //<editor-fold desc="ALL FILES CHECKBOX">
     _dom.allFilesChkLabel = document.createElement('label')
     _dom.allFilesChkLabel.textContent = `Sélectionner tous les fichiers`
     Object.assign(_dom.allFilesChkLabel.style, {
         display: 'block',
-    });
+    })
 
     _dom.allFilesChk = document.createElement('input')
     _dom.allFilesChk.type = 'checkbox'
     _dom.allFilesChk.checked = false
     Object.assign(_dom.allFilesChk.style, {
         margin: '5px 5px 0 0',
-    });
+    })
     _dom.allFilesChk.addEventListener('change', (event) => {
         let selected = event.currentTarget.checked
         _getAllFiles().forEach(function (file) {
@@ -581,24 +579,24 @@ function _createDomPanel() {
         _updateDomPanel()
     })
     _dom.allFilesChk.updateState = function () {
-        this.checked = _getAllFiles().length === _getAllSelectedFiles().length;
+        this.checked = _getAllFiles().length === _getAllSelectedFiles().length
     }
     _dom.allFilesChkLabel.prepend(_dom.allFilesChk)
-    _dom.downloaderContainer.appendChild(_dom.allFilesChkLabel);
+    _dom.downloaderContainer.appendChild(_dom.allFilesChkLabel)
     //</editor-fold>
     //<editor-fold desc="ALL MISSING FILES CHECKBOX">
     _dom.allMissingFilesChkLabel = document.createElement('label')
     _dom.allMissingFilesChkLabel.textContent = `Sélectionner les fichiers manquants`
     Object.assign(_dom.allMissingFilesChkLabel.style, {
         display: 'block',
-    });
+    })
 
     _dom.allMissingFilesChk = document.createElement('input')
     _dom.allMissingFilesChk.type = 'checkbox'
     _dom.allMissingFilesChk.checked = false
     Object.assign(_dom.allMissingFilesChk.style, {
         margin: '5px 5px 0 0',
-    });
+    })
     _dom.allMissingFilesChk.addEventListener('change', (event) => {
         let selected = event.currentTarget.checked
         _getAllMissingFiles().forEach(function (file) {
@@ -607,30 +605,30 @@ function _createDomPanel() {
         _updateDomPanel()
     })
     _dom.allMissingFilesChk.updateState = function () {
-        this.checked = _getAllMissingFiles().length === _getAllSelectedFiles().length;
+        this.checked = _getAllMissingFiles().length === _getAllSelectedFiles().length
     }
     _dom.allMissingFilesChkLabel.prepend(_dom.allMissingFilesChk)
-    _dom.downloaderContainer.appendChild(_dom.allMissingFilesChkLabel);
+    _dom.downloaderContainer.appendChild(_dom.allMissingFilesChkLabel)
     //</editor-fold>
     //<editor-fold desc="CONTRACTS COUNTER">
     _dom.contractsCounterContainer = document.createElement('p')
-    _dom.downloaderContainer.appendChild(_dom.contractsCounterContainer);
+    _dom.downloaderContainer.appendChild(_dom.contractsCounterContainer)
     Object.assign(_dom.contractsCounterContainer.style, {
         textAlign: 'left',
         fontSize: '14px',
         marginTop: '14px',
         color: 'rgb(136,136,136)',
-    });
+    })
     //</editor-fold>
     //<editor-fold desc="FILES COUNTER">
     _dom.filesCounterContainer = document.createElement('p')
-    _dom.downloaderContainer.appendChild(_dom.filesCounterContainer);
+    _dom.downloaderContainer.appendChild(_dom.filesCounterContainer)
     Object.assign(_dom.filesCounterContainer.style, {
         textAlign: 'left',
         fontSize: '14px',
         marginTop: '14px',
         color: 'rgb(136,136,136)',
-    });
+    })
     //</editor-fold>
     //<editor-fold desc="CLEAR PAGE STORAGE BUTTON">
     _dom.buttonClearPageStorage = document.createElement('button')
@@ -648,9 +646,9 @@ function _createDomPanel() {
         float: 'left',
         display: 'none',
         backgroundColor: 'rgb(254,69,88)',
-    });
+    })
     _dom.buttonClearPageStorage.textContent = 'Supprimer l\'historique de la page'
-    _dom.downloaderContainer.appendChild(_dom.buttonClearPageStorage);
+    _dom.downloaderContainer.appendChild(_dom.buttonClearPageStorage)
     _dom.buttonClearPageStorage.addEventListener('click', function () {
         if (window.confirm("Vous êtes sur le point de supprimer l'historique des fichiers de la page.\nVouslez-vous continuer ?")) {
             _getAllFiles().forEach(function (file) {
@@ -676,9 +674,9 @@ function _createDomPanel() {
         float: 'right',
         display: 'none',
         backgroundColor: 'rgb(219,40,40)',
-    });
+    })
     _dom.buttonClearAllStorage.textContent = 'Supprimer tout l\'historique'
-    _dom.downloaderContainer.appendChild(_dom.buttonClearAllStorage);
+    _dom.downloaderContainer.appendChild(_dom.buttonClearAllStorage)
     _dom.buttonClearAllStorage.addEventListener('click', function () {
         if (window.confirm("Vous êtes sur le point de supprimer tout l'historique de toutes les pages.\nVouslez-vous continuer ?")) {
             localStorage.clear()
@@ -694,9 +692,9 @@ function _createDomPanel() {
         marginTop: '14px',
         marginBottom: '14px',
         display: 'inline-block',
-    });
+    })
     _dom.messageContainer.innerHTML = ''
-    _dom.downloaderContainer.appendChild(_dom.messageContainer);
+    _dom.downloaderContainer.appendChild(_dom.messageContainer)
     //</editor-fold>
     //<editor-fold desc="ERROR LIST">
     _dom.errorsListContainer = document.createElement('div')
@@ -704,16 +702,16 @@ function _createDomPanel() {
         textAlign: 'left',
         fontSize: '14px',
         marginTop: '14px',
-    });
+    })
     _dom.errorsListContainer.innerHTML = ''
-    _dom.downloaderContainer.appendChild(_dom.errorsListContainer);
+    _dom.downloaderContainer.appendChild(_dom.errorsListContainer)
     //</editor-fold>
-    document.body.appendChild(_dom.downloaderContainer);
+    document.body.appendChild(_dom.downloaderContainer)
 }
 
 function _updateDomPanel() {
     //<editor-fold desc="RUN DOWNLOAD BUTTON">
-    _dom.buttonRun.disabled = _getAllSelectedFiles().length === 0;
+    _dom.buttonRun.disabled = _getAllSelectedFiles().length === 0
     if (_isRunning) {
         _dom.buttonRun.textContent = 'Téléchargement en cours...'
     } else {
@@ -722,7 +720,7 @@ function _updateDomPanel() {
     }
     Object.assign(_dom.buttonRun.style, {
         cursor: _getAllSelectedFiles().length === 0 ? 'initial' : 'pointer',
-    });
+    })
     //</editor-fold>
     //<editor-fold desc="CONTRACTS COUNTER">
     let contractsWithAllFilesDownloaded = _contracts.filter(function (contract) {
@@ -740,11 +738,11 @@ function _updateDomPanel() {
     if (localStorage.length > 0) {
         Object.assign(_dom.buttonClearAllStorage.style, {
             display: 'inline-block',
-        });
+        })
         _dom.buttonClearAllStorage.disabled = _isRunning
         Object.assign(_dom.buttonClearPageStorage.style, {
             display: 'inline-block',
-        });
+        })
         _dom.buttonClearPageStorage.disabled = _isRunning
     }
     //</editor-fold>
@@ -760,12 +758,12 @@ function _updateDomPanel() {
 
             errorMessageHtml = "<h4 style='color: rgb(219,40,40); font-size: 18px;text-align: center'>⚠ Certains fichiers n'ont pas pu être téléchargés ⚠</h4><br>"
             let filesNotFoundCount = 0
-            let errorsListHtml = '';
+            let errorsListHtml = ''
             contractsWithErrors.forEach(function (contract) {
                 errorsListHtml += `<p style="margin-bottom: 5px;"><b>${contract.reference}</b> : </p>`
                 contract.files.getError().forEach(function (file) {
                     errorsListHtml += '<p>' +
-                        ` - ${file.type}`;
+                        ` - ${file.type}`
                     if (file.isNotFound()) {
                         filesNotFoundCount++
                         errorsListHtml += ' <span style="float:right; color: rgb(219,40,40);">Téléchargement impossible</span>'
@@ -812,7 +810,7 @@ function _updateDomPanel() {
                 style.backgroundColor = 'rgba(33,186,69, 0.10)'
             }
         }
-        Object.assign(contract.dom.panel.style, style);
+        Object.assign(contract.dom.panel.style, style)
     })
     //</editor-fold>
     //<editor-fold desc="FILES STORAGE">
@@ -858,7 +856,7 @@ let _fileTypes = [
 ]
 let _contracts = []
 let _firstFileNotFound = false
-let _fileLinkTimeout = 7000;
+let _fileLinkTimeout = 7000
 let _domId = 'smart-contract-files-downloader'
 let _dom = {
     contractsCounterContainer: null,

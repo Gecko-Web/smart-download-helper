@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Smart download helper",
   "description": "Chrome & Firefox extension to help download files from the SmartFr dashboard",
   "version": "1.0",
@@ -10,10 +10,11 @@
     "48": "src/images/icon-48.png",
     "128": "src/images/icon-128.png"
   },
-  "action": {
+  "browser_action": {
     "default_icon": "/src/images/icon-128.png",
     "default_title": "Smart download helper"
   },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "content_scripts": [
     {
       "matches": [
@@ -21,16 +22,6 @@
       ],
       "js": [
         "/src/inject.js"
-      ]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "src/contractFiles/contractFiles.js"
-      ],
-      "matches": [
-        "https://compte.smartfr.fr/*"
       ]
     }
   ],

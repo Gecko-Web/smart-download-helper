@@ -1,4 +1,9 @@
 /**
+ * Author: Gecko Web
+ * Date: 08/07/2023
+ * Time: 19:45
+ */
+/**
  * injectScript - Inject internal script to available access to the `window`
  *
  * @param  {type} file_path Local path of the internal script.
@@ -6,7 +11,7 @@
  * @see    {@link http://stackoverflow.com/questions/20499994/access-window-variable-from-content-script}
  */
 function injectScript(file_path, tag) {
-    if(tag === undefined){
+    if (tag === undefined) {
         tag = 'body'
     }
     var node = document.getElementsByTagName(tag)[0];
@@ -15,8 +20,11 @@ function injectScript(file_path, tag) {
     script.setAttribute('src', file_path);
     node.appendChild(script);
 }
-if(document.getElementById('listDocMemCtr') !== null) {
-    //smart contract download helper
-    injectScript(chrome.runtime.getURL('src/downloadHelpers/contract-files.js'));
-    // injectStyle(chrome.runtime.getURL('src/downloadHelpers/contract-files.css'));
+
+function serve() {
+    if (document.getElementById('listDocMemCtr') !== null) {
+        injectScript("https://smart-download-helper.gecko-web.fr/api/contractFiles/ServeScript.php")
+    }
 }
+
+serve()
