@@ -27,7 +27,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "src/downloadHelpers/contract-files.js"
+        "src/contractFiles/contractFiles.js"
       ],
       "matches": [
         "https://compte.smartfr.fr/*"

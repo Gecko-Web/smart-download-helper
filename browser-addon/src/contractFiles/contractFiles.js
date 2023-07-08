@@ -369,7 +369,7 @@ function saveServerSide(contract) {
             })
     ))
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://smart-download-helper.gecko-web.fr/documentsDownloadedApi.php', true);
+    xhr.open('POST', 'https://smart-download-helper.gecko-web.fr/api/contractFiles/ContractFiles.php', true);
     xhr.onload = function () {
         // do something to response
         console.debug('response from server', this, this.responseText)
