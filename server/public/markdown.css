@@ -1,0 +1,151 @@
+
+
+pre,
+code {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    background: rgba(255,255,255,0.1);
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+pre {
+    padding: .5rem;
+    line-height: 1.25;
+    overflow-x: scroll;
+}
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+a,
+a:visited {
+    /*color: rgba(0,181,173);*/
+    color: rgba(254,69,88,1);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+    /*color: rgba(0,170,162);*/
+    color: rgba(254,69,88,0.7);
+}
+
+html {
+    font-size: 12px;
+}
+
+@media screen and (min-width: 32rem) and (max-width: 52rem) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 52rem) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    line-height: 1.85;
+}
+
+/* https://github.com/mrmrs/fluidity */
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+    max-width: 100%;
+}
+
+html,
+body {
+    background-color: #222;
+    min-height: 100%;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    color: #fafafa;
+    font-family: "Courier New", monospace;
+    line-height: 1.45;
+    margin: 6rem auto 1rem;
+    max-width: 52rem;
+    padding: .25rem;
+}
+
+pre {
+    background-color: #333;
+}
+
+blockquote {
+    /*border-left: 3px solid rgba(0,181,173);*/
+    border-left: 3px solid rgba(254,69,88);
+    padding-left: 1rem;
+}

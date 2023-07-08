@@ -1,0 +1,336 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "966275d221fabdf11680149ed65a16be",
+    "packages": [
+        {
+            "name": "jbzoo/data",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JBZoo/Data.git",
+                "reference": "1e1238e915b942b4147ea8746760423f3cbdf20b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JBZoo/Data/zipball/1e1238e915b942b4147ea8746760423f3cbdf20b",
+                "reference": "1e1238e915b942b4147ea8746760423f3cbdf20b",
+                "shasum": ""
+            },
+            "require": {
+                "jbzoo/utils": "^2.2.1",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "jbzoo/phpunit": "^2.2.1",
+                "jbzoo/profiler": "^1.0.5",
+                "satooshi/php-coveralls": "^1.0.2",
+                "symfony/yaml": "^3.3.13"
+            },
+            "suggest": {
+                "symfony/yaml": "^3.3.13"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "JBZoo\\Data\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SmetDenis",
+                    "email": "denis@jbzoo.com",
+                    "role": "lead"
+                }
+            ],
+            "description": "Extended implementation of ArrayObject",
+            "keywords": [
+                "array",
+                "arrayobject",
+                "config",
+                "data",
+                "ini",
+                "json",
+                "params",
+                "yml"
+            ],
+            "support": {
+                "issues": "https://github.com/SmetDenis/Data/issues",
+                "source": "https://github.com/JBZoo/Data/tree/master"
+            },
+            "time": "2018-12-03T16:32:55+00:00"
+        },
+        {
+            "name": "jbzoo/utils",
+            "version": "2.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JBZoo/Utils.git",
+                "reference": "549ca27f7ced373afe0bf1847579656c730ea702"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JBZoo/Utils/zipball/549ca27f7ced373afe0bf1847579656c730ea702",
+                "reference": "549ca27f7ced373afe0bf1847579656c730ea702",
+                "shasum": ""
+            },
+            "require": {
+                "jbzoo/data": "^1.6|^2.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "jbzoo/phpunit": "^2.2",
+                "jbzoo/profiler": "^1.0",
+                "php-coveralls/php-coveralls": "^2.1",
+                "symfony/polyfill-mbstring": "^1.10",
+                "symfony/process": "^3.3|^4.1"
+            },
+            "suggest": {
+                "ext-mbstring": "Provides multibyte specific string functions",
+                "symfony/polyfill-mbstring": "For UTF-8 if ext-mbstring disabled",
+                "symfony/process": "For Cli::exec() method only"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/defines.php"
+                ],
+                "psr-4": {
+                    "JBZoo\\Utils\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SmetDenis",
+                    "email": "denis@jbzoo.com",
+                    "role": "lead"
+                },
+                {
+                    "name": "Brandon Wamboldt",
+                    "email": "brandon.wamboldt@gmail.com"
+                },
+                {
+                    "name": "Luís Nóbrega",
+                    "email": "luis.barros.nobrega@gmail.com"
+                }
+            ],
+            "description": "A collection of useful PHP functions, mini classes and snippets that you need every day.",
+            "keywords": [
+                "array",
+                "cli",
+                "collection",
+                "command line",
+                "dates",
+                "email",
+                "env",
+                "environment",
+                "filesystem",
+                "filter",
+                "helper",
+                "helpers",
+                "http",
+                "image",
+                "mbstring",
+                "misc",
+                "serialize",
+                "slugify",
+                "string",
+                "timer",
+                "url",
+                "utility",
+                "utils"
+            ],
+            "support": {
+                "issues": "https://github.com/JBZoo/Utils/issues",
+                "source": "https://github.com/JBZoo/Utils/tree/master"
+            },
+            "time": "2019-11-21T09:34:54+00:00"
+        },
+        {
+            "name": "league/commonmark",
+            "version": "1.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/commonmark.git",
+                "reference": "2b8185c13bc9578367a5bf901881d1c1b5bbd09b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/2b8185c13bc9578367a5bf901881d1c1b5bbd09b",
+                "reference": "2b8185c13bc9578367a5bf901881d1c1b5bbd09b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.1 || ^8.0"
+            },
+            "conflict": {
+                "scrutinizer/ocular": "1.7.*"
+            },
+            "require-dev": {
+                "cebe/markdown": "~1.0",
+                "commonmark/commonmark.js": "0.29.2",
+                "erusev/parsedown": "~1.0",
+                "ext-json": "*",
+                "github/gfm": "0.29.0",
+                "michelf/php-markdown": "~1.4",
+                "mikehaertl/php-shellcommand": "^1.4",
+                "phpstan/phpstan": "^0.12.90",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.2",
+                "scrutinizer/ocular": "^1.5",
+                "symfony/finder": "^4.2"
+            },
+            "bin": [
+                "bin/commonmark"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\CommonMark\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Colin O'Dell",
+                    "email": "colinodell@gmail.com",
+                    "homepage": "https://www.colinodell.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Highly-extensible PHP Markdown parser which fully supports the CommonMark spec and Github-Flavored Markdown (GFM)",
+            "homepage": "https://commonmark.thephpleague.com",
+            "keywords": [
+                "commonmark",
+                "flavored",
+                "gfm",
+                "github",
+                "github-flavored",
+                "markdown",
+                "md",
+                "parser"
+            ],
+            "support": {
+                "docs": "https://commonmark.thephpleague.com/",
+                "issues": "https://github.com/thephpleague/commonmark/issues",
+                "rss": "https://github.com/thephpleague/commonmark/releases.atom",
+                "source": "https://github.com/thephpleague/commonmark"
+            },
+            "funding": [
+                {
+                    "url": "https://www.colinodell.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.me/colinpodell/10.00",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/colinodell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/league/commonmark",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-01-13T17:18:13+00:00"
+        },
+        {
+            "name": "rakibtg/sleekdb",
+            "version": "2.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rakibtg/SleekDB.git",
+                "reference": "957468be56bfc5d23f8f5fa7438e90ede17f9d05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rakibtg/SleekDB/zipball/957468be56bfc5d23f8f5fa7438e90ede17f9d05",
+                "reference": "957468be56bfc5d23f8f5fa7438e90ede17f9d05",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5",
+                "spatie/phpunit-watcher": "^1.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SleekDB\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rakibtg",
+                    "email": "rakibtg@gmail.com"
+                }
+            ],
+            "description": "SleekDB - A 30Kb NoSQL Database made using PHP",
+            "keywords": [
+                "SleekDB",
+                "api",
+                "database",
+                "flatfile",
+                "framework",
+                "micro",
+                "nosql",
+                "php",
+                "rest"
+            ],
+            "support": {
+                "issues": "https://github.com/rakibtg/SleekDB/issues",
+                "source": "https://github.com/rakibtg/SleekDB/tree/2.15"
+            },
+            "time": "2022-10-16T17:55:55+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.3.27",
+        "ext-json": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

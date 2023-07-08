@@ -193,7 +193,7 @@ function _createContractFiles(contract) {
                 this._fillFromStorage()
             },
             _fillFromStorage: function () {
-                let json = localStorage.getItem(contractFile.id)
+                let json = this.getFromStorage(contractFile.id)
                 if (json !== null) {
                     let storedObject = JSON.parse(json)
                     Object.assign(contractFile, storedObject)
@@ -262,6 +262,9 @@ function _createContractFiles(contract) {
                 }
                 this.dom._update(this)
             },
+            getFromStorage: function (fileId) {
+                return localStorage.getItem(fileId)
+            },
             setToStorage: function () {
                 localStorage.setItem(this.id, JSON.stringify({
                     filename: this.filename,
@@ -300,7 +303,7 @@ function _getAllSelectedFiles() {
     return selectedFiles
 }
 
-function _getAllMissingFiles(){
+function _getAllMissingFiles() {
     let missingFiles = []
     _contracts.forEach(function (contract) {
         missingFiles = missingFiles.concat((contract.files.getNotDownloaded()))
@@ -336,6 +339,9 @@ function _downloadContractFiles(contracts) {
             let successFiles = downloadedFiles.filter(function (file) {
                 return file.isDownloaded()
             })
+
+            saveServerSide(contract)
+
             console.log(`%c> %c${successFiles.length} %cdocument(s) downloaded for Reference %c${contract.reference}`, 'color:#FFF', 'color:#21BA45', 'color:#00B5AD', 'color:#FFF')
             _updateDomPanel()
         })
@@ -345,6 +351,30 @@ function _downloadContractFiles(contracts) {
         _hasBeenRun = true
         _updateDomPanel()
     })
+}
+
+function saveServerSide(contract) {
+    var data = new FormData();
+    data.append('contractReference', contract.reference)
+    data.append('contractFiles', JSON.stringify(
+        contract.files.getDownloaded()
+            .map(function (file, key) {
+                return {
+                    type: file.type,
+                    contractRef: file.contractRef,
+                    filename: file.filename,
+                    isDownloaded: file.isDownloaded(),
+                    downloadDate: file._downloadDate,
+                }
+            })
+    ))
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://smart-download-helper.gecko-web.fr/documentsDownloadedApi.php', true);
+    xhr.onload = function () {
+        // do something to response
+        console.debug('response from server', this, this.responseText)
+    };
+    xhr.send(data);
 }
 
 function _downloadFileFct(file) {
@@ -545,7 +575,7 @@ function _createDomPanel() {
     });
     _dom.allFilesChk.addEventListener('change', (event) => {
         let selected = event.currentTarget.checked
-        _getAllFiles().forEach(function(file){
+        _getAllFiles().forEach(function (file) {
             file.setSelected(selected)
         })
         _updateDomPanel()
@@ -571,7 +601,7 @@ function _createDomPanel() {
     });
     _dom.allMissingFilesChk.addEventListener('change', (event) => {
         let selected = event.currentTarget.checked
-        _getAllMissingFiles().forEach(function(file){
+        _getAllMissingFiles().forEach(function (file) {
             file.setSelected(selected)
         })
         _updateDomPanel()
@@ -838,6 +868,7 @@ let _dom = {
 }
 let _isRunning = false
 let _hasBeenRun = false
+
 function _run() {
     _createDomStyle()
     _createDomPanel()
@@ -846,5 +877,6 @@ function _run() {
     _dom.allMissingFilesChk.updateState()
     _updateDomPanel()
 }
+
 _run()
 //</editor-fold>

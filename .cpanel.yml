@@ -1,0 +1,14 @@
+#
+# Deployment on cPanel with Git
+# see https://docs.cpanel.net/knowledge-base/web-services/guide-to-git-deployment/
+#
+# Fill the deployment export path :
+# Example : export DEPLOYPATH=/<root>/<username>/<project path>/
+# Example : export DEPLOYPATH=/home/gecko/websites_php7.3/<project name>/
+#
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/gecko/websites/_LAB/smart-download-helper/
+    - /bin/cp -R * $DEPLOYPATH                                              # Copy all recursively to $DEPLOYPATH
+    - /bin/cp .env $DEPLOYPATH                                              # Copy .env file to $DEPLOYPATH
