@@ -243,7 +243,7 @@ Si cette extension vous a été utile et que vous en avez l'envie et les moyens,
 *J'accepte également tout ce qui est grosses bagnoles 🚗, yachts 🛥️, châteaux 🏰, îles privées 🏝️, fusées spatiales 
 🚀 ou licornes en or massif 🦄*
 
-[🍺 Payer une bière !](https://paypal.me/GeckoWeb35?country.x=FR&locale.x=fr_FR)
+[🍺 Offrir une bière !](https://paypal.me/GeckoWeb35?country.x=FR&locale.x=fr_FR)
 
 ![paypal150.png](assets/images/paypal-150.png)
 
