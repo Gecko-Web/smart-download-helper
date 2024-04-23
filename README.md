@@ -1,6 +1,5 @@
 <p align="center">
-![Smart Download Helper](assets/images/icon-128.png)
-
+<img src="assets/images/icon-128.png" alt="Smart Download Helper">
 </p>
 <p align="center" style="color:#fe4558">Because downloading all this is pain in the ass...</p>
 
