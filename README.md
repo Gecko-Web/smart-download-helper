@@ -46,11 +46,11 @@ retraite.*
 
 **2°** Extraire l'archive
 
-> ATTENTION :
-> Une fois l'extension installée, si son répertoire est supprimé, l'extension ne fonctionnera plus.
+> ⚠️ ATTENTION :
+> Une fois l'extension installée, si son répertoire est supprimé, celle-ci ne fonctionnera plus.
 >
 > Assurez-vous d'extraire les fichiers dans un dossier que vous ne supprimez pas accidentellement.
-> Par exemple : `C:\Program Files\smart-download-helper`
+> Par exemple : `C:\Program Files\smart-download-helper-addon`
 
 ![télécharger l'extension - étape 2](assets/images/step2.png)
 
@@ -69,15 +69,11 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 
 **2°** Rendez-vous dans le menu en haut à droite du navigateur
 
-![installer l'extension - chrome - étape 2](assets/images/chrome/step2.png)
-
-**3°** Rendez-vous dans le menu de gestion des extensions de Chrome
-
-> Menu `Plus d'outils > Extensions`
+Menu `Plus d'outils > Extensions > Gérer les extensions`
 
 ![installer l'extension - chrome - étape 3](assets/images/chrome/step3.png)
 
-**4°** Activez le `mode développeur`
+**4°** Activez le `mode développeur` en haut à droite
 
 ![installer l'extension - chrome - étape 4](assets/images/chrome/step4.png)
 
@@ -85,9 +81,9 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 
 ![installer l'extension - chrome - étape 5](assets/images/chrome/step5.png)
 
-**6°** Sélectionnez le répertoire extrait à l'étape n°2
+**6°** Sélectionnez le répertoire `browser-addon` dans le dossier extrait à l'étape n°2
 
-> Par exemple : `C:\Program Files\smart-download-helper`
+> Par exemple : `C:\Program Files\smart-download-helper-addon\browser-addon`
 
 ![installer l'extension - chrome - étape 6](assets/images/chrome/step6.png)
 
@@ -99,7 +95,7 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 
 **8°** Activez le téléchargement automatique des fichiers
 
-> Menu `Paramètres > Téléchargements`
+Menu `Paramètres > Téléchargements`
 
 - Sélectionnez un emplacement pour enregistrer les fichiers
 - Décochez la case "Toujours demander où enregistrer les fichiers"
@@ -118,11 +114,9 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 
 **2°** Rendez-vous dans le menu en haut à droite du navigateur
 
-![installer l'extension - firefox - étape 2](assets/images/firefox/step2.png)
-
 **3°** Rendez-vous dans le menu de gestion des extensions de Firefox
 
-> Menu `Extensions et thèmes`
+Menu `Extensions et thèmes`
 
 ![installer l'extension - firefox - étape 3](assets/images/firefox/step3.png)
 
@@ -136,9 +130,9 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 
 ![installer l'extension - firefox - étape 5](assets/images/firefox/step5.png)
 
-**6°** Sélectionnez le fichier `manifest.json` dans le répertoire extrait à l'étape n°2
+**6°** Sélectionnez le fichier `browser-addon/manifest.json` dans le dossier extrait à l'étape n°2
 
-> Par exemple : `C:\Program Files\smart-download-helper\manifest.json`
+> Par exemple : `C:\Program Files\smart-download-helper-addon\browser-addon\manifest.json`
 
 ![installer l'extension - firefox - étape 6](assets/images/firefox/step6.png)
 
@@ -149,7 +143,8 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 **8°** Autorisez le chargement automatique de l'extension sur la page
 
 > Retournez dans le menu de gestion de vos extensions
-> Menu `Extensions et thèmes`
+
+Menu `Extensions et thèmes`
 
 ![installer l'extension - firefox - étape 8](assets/images/firefox/step3.png)
 
@@ -164,7 +159,7 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 
 **9°** Activez le téléchargement automatique des fichiers
 
-> Menu `Paramètres` Puis faites défiler la page jusqu'à la section Téléchargements
+Menu `Paramètres` Puis faites défiler la page jusqu'à la section Téléchargements
 
 - Sélectionnez un emplacement pour enregistrer les fichiers
 - Décochez la case "Toujours demander où enregistrer les fichiers"
@@ -181,7 +176,7 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 
 **2°** Rendez-vous sur la liste des contrats acceptés
 
-> Menu `Historique > Contrats acceptés`
+Menu `Historique > Contrats acceptés`
 
 **3°** Si l'extension est bien chargée et activée, une pop-up de gestion des téléchargements apparaît sur la droite de
 la page et des cases à chocher sont ajoutées à coté des documents à télécharger.
