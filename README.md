@@ -6,7 +6,7 @@
 > **Smart Download Helper**
 > *Chrome & Firefox extension to help download files from the SmartFr dashboard*
 >
-> __website :__ [www.gecko-web.fr](https://gecko-web.fr)
+> __website :__ [www.gecko-web.fr](https://gecko-web.fr)  
 > __contact :__ contact@gecko-web.fr
 
 ---
@@ -241,7 +241,7 @@ Emploi", ce qui pourrait entraîner un recalcul de vos droits au chômage.
 
 # *IV.* Ça vous a été utile ? Faites-le-moi savoir ! 😊
 
-Si cette extension vous a été utile et que vous en avez l'envie et les moyens, pourquoi ne pas me payer une bière ?
+Si cette extension vous a été utile et que vous en avez l'envie et les moyens, pourquoi ne pas me payer une bière ?  
 *(je prend également les grosses bagnoles 🚗, yachts 🛥️, châteaux 🏰, îles privées 🏝️, fusées spatiales 🚀 ou licornes en
 or massif 🦄)*
 
