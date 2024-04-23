@@ -16,7 +16,7 @@ SmartFr :
 
 * Contrats de travail
 * Bulletins de paie
-* Attestation Employeur Dématérialisée (AER)
+* Attestations Employeur Rematérialisées (AER)
 
 *Il est essentiel de télécharger et conserver ces documents qui servent de preuve de votre relation de travail,
 attestent de votre rémunération, et sont indispensables pour faire valoir vos droits sociaux comme le chômage ou la
@@ -28,7 +28,7 @@ retraite.*
 - [II. Installer l'extension](#ii-installer-lextension)
   - [Chrome](#ii-chrome)
   - [Firefox](#ii-firefox)
-- [III. UTILISATION DU PLUGIN](#iii-utilisation-du-plugin)
+- [III. Utilisation du plugin](#iii-utilisation-du-plugin)
   - [Erreurs de téléchargement](#erreurs-de-téléchargement)
 - [IV. Ça vous a été utile ? Faites-le-moi savoir ! 😊](#bring-me-a-beer)
 
@@ -69,7 +69,7 @@ des navigateurs, son installation est un peu particulière et doit se faire "à 
 
 **2°** Rendez-vous dans le menu en haut à droite du navigateur
 
-Menu `Plus d'outils > Extensions > Gérer les extensions`
+Menu `Extensions > Gérer les extensions`
 
 ![installer l'extension - chrome - étape 3](assets/images/chrome/step3.png)
 
@@ -89,7 +89,7 @@ Menu `Plus d'outils > Extensions > Gérer les extensions`
 
 **7°** L'extension devrait être chargée
 
-> Pensez à bien activer l'extension
+💡 Pensez à bien activer l'extension
 
 ![installer l'extension - chrome - étape 7](assets/images/chrome/step7.png)
 
@@ -108,7 +108,7 @@ Menu `Paramètres > Téléchargements`
 
 > ### ⚠️ Dans Firefox, le module devra être réinstallé à chaque démarrage
 >
-> préférez [l'utilisation de Chrome](#install-chrome) si possible (ouep, déso 😞)
+> Préférez [l'utilisation de Chrome](#install-chrome) si possible (ouep, déso 😞)
 
 **1°** Ouvrez le navigateur firefox (https://www.mozilla.org/fr/firefox/new/)
 
@@ -142,18 +142,15 @@ Menu `Extensions et thèmes`
 
 **8°** Autorisez le chargement automatique de l'extension sur la page
 
-> Retournez dans le menu de gestion de vos extensions
-
-Menu `Extensions et thèmes`
+Retournez dans le menu `Extensions et thèmes`
 
 ![installer l'extension - firefox - étape 8](assets/images/firefox/step3.png)
 
-> Rendez-vous dans le menu de gestion de l'extension `Smart download helper`
+Rendez-vous dans le menu de gestion de l'extension `Smart download helper`
 
 ![installer l'extension - firefox - étape 8.1](assets/images/firefox/step8-1.png)
 
-> Onglet `Permissions`
-> Cliquez sur `Accéder à vos données pour https://compte.smartfr.fr`
+Dans l'onglet `Permissions`, cliquez sur `Accéder à vos données pour https://compte.smartfr.fr`
 
 ![installer l'extension - firefox - étape 8.2](assets/images/firefox/step8-2.png)
 
@@ -168,11 +165,11 @@ Menu `Paramètres` Puis faites défiler la page jusqu'à la section Télécharge
 
 <a id="iii-utilisation-du-plugin"></a>
 
-# *III.* UTILISATION DU PLUGIN
+# *III.* Utilisation du plugin
 
 **1°** Connectez-vous à votre compte SmartFr
 
-> https://compte.smartfr.fr
+https://compte.smartfr.fr
 
 **2°** Rendez-vous sur la liste des contrats acceptés
 
@@ -195,20 +192,20 @@ Pour cela vous pouvez
 
 *5°* Cliquez sur le bouton "Télécharger X documents"
 
-> Les téléchargements se lancent et vous devez patienter jusqu'à la fin
+Les téléchargements se lancent et vous devez patienter jusqu'à la fin
 
 *6°* Répétez cette opération sur chacune des pages listant vos documents
 
-> Oui c'est long, mais avez vous essayé de le faire à la main pour chaque fichier ? :p
+Oui c'est long, mais avez vous essayé de le faire à la main pour chaque fichier ? 😜
 
 <a id="erreurs-de-téléchargement"></a>
 
 ## Erreurs de téléchargement
 
-Il arrive que des erreurs se produisent lors des téléchargements.
-Cela est souvent dû à un fichier manquant.
-L'interface Smart est faite de telle manière que tous les téléchargements en cours sont stoppés.
-Dans ce cas, le plugin est limité et vous devez relancer les téléchargements.
+> Il arrive que des erreurs se produisent lors des téléchargements.  
+> Cela est souvent dû à un fichier manquant.  
+> L'interface Smart est faite de telle manière que tous les téléchargements en cours sont stoppés.  
+> Dans ce cas, le plugin est limité et vous devez relancer les téléchargements.  
 
 ![erreur de téléchargement](assets/images/dl-error.png)
 
@@ -242,8 +239,9 @@ Emploi", ce qui pourrait entraîner un recalcul de vos droits au chômage.
 # *IV.* Ça vous a été utile ? Faites-le-moi savoir ! 😊
 
 Si cette extension vous a été utile et que vous en avez l'envie et les moyens, pourquoi ne pas me payer une bière ?  
-*(je prend également les grosses bagnoles 🚗, yachts 🛥️, châteaux 🏰, îles privées 🏝️, fusées spatiales 🚀 ou licornes en
-or massif 🦄)*
+
+*J'accepte également tout ce qui est grosses bagnoles 🚗, yachts 🛥️, châteaux 🏰, îles privées 🏝️, fusées spatiales 
+🚀 ou licornes en or massif 🦄*
 
 [🍺 Payer une bière !](https://paypal.me/GeckoWeb35?country.x=FR&locale.x=fr_FR)
 
