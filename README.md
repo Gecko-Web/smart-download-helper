@@ -230,7 +230,7 @@ Dans la plupart des cas il s'agit des Attestations Employeur Rematérialisées (
 > Dématérialisée (AED). Elle permet au salarié de faire valoir ses droits à l'assurance chômage.
 
 Si ces AER ne sont pas disponibles dans l'interface, il est fort probable qu'ils n'aient pas été transmis à "Pôle
-Emploi", ce qui pourrait entraîner un recalcul de vos droits au chômage.
+Emploi", ce qui pourrait entraîner un recalcule de vos droits au chômage.
 
 ### ⚠️ Encore une fois, je vous invite vivement à faire la demande des documents manquants auprès de Smart. ⚠️
 
@@ -243,7 +243,6 @@ Si cette extension vous a été utile et que vous en avez l'envie et les moyens,
 *J'accepte également tout ce qui est grosses bagnoles 🚗, yachts 🛥️, châteaux 🏰, îles privées 🏝️, fusées spatiales 
 🚀 ou licornes en or massif 🦄*
 
-[🍺 Offrir une bière !](https://paypal.me/GeckoWeb35?country.x=FR&locale.x=fr_FR)
-
-![paypal150.png](assets/images/paypal-150.png)
+[🍺 Offrir une bière via Paypal !](https://paypal.me/GeckoWeb35?country.x=FR&locale.x=fr_FR)  
+[🍺 Offrir une bière via Leetchi !](https://www.leetchi.com/fr/c/gecko-web--smart-download-helper-3406835?utm_source=copylink&utm_medium=social_sharing)
 
