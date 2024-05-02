@@ -108,7 +108,7 @@ Menu `Paramètres > Téléchargements`
 
 > ### ⚠️ Dans Firefox, le module devra être réinstallé à chaque démarrage
 >
-> Préférez [l'utilisation de Chrome](#install-chrome) si possible (ouep, déso 😞)
+> Préférez [l'utilisation de Chrome](#ii-chrome) si possible (ouep, déso 😞)
 
 **1°** Ouvrez le navigateur firefox (https://www.mozilla.org/fr/firefox/new/)
 
