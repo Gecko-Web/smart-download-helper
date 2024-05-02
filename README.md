@@ -244,5 +244,5 @@ Si cette extension vous a été utile et que vous en avez l'envie et les moyens,
 🚀 ou licornes en or massif 🦄*
 
 [🍺 Offrir une bière via Paypal !](https://paypal.me/GeckoWeb35?country.x=FR&locale.x=fr_FR)  
-[🍺 Offrir une bière via Leetchi !](https://www.leetchi.com/fr/c/gecko-web--smart-download-helper-3406835?utm_source=copylink&utm_medium=social_sharing)
+[🍺 Offrir une bière via Leetchi !](https://www.leetchi.com/fr/c/gecko-web--smart-download-helper-3406835)
 
