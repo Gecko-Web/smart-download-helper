@@ -1,7 +1,6 @@
 <p align="center">
-<img src="assets/images/icon-128.png" alt="Smart Download Helper">
+<img src="assets/images/header.png" alt="Smart Download Helper">
 </p>
-<p align="center" style="color:#fe4558">Because downloading all this is pain in the ass...</p>
 
 > **Smart Download Helper**
 > *Chrome & Firefox extension to help download files from the SmartFr dashboard*
@@ -243,7 +242,7 @@ Si cette extension vous a été utile et que vous en avez l'envie et les moyens,
 *J'accepte également tout ce qui est grosses bagnoles 🚗, yachts 🛥️, châteaux 🏰, îles privées 🏝️, fusées spatiales 
 🚀 ou licornes en or massif 🦄*
 
-[🍺 Offrir une bière via On Participe !](https://www.onparticipe.fr/c/tMqRdX6x)
+[🍺 Offrir une bière via On Participe !](https://www.onparticipe.fr/c/tMqRdX6x)  
 [🍺 Offrir une bière via Paypal !](https://paypal.me/GeckoWeb35?country.x=FR&locale.x=fr_FR)  
 
 
